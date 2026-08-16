@@ -1,0 +1,1334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* Navigation */
+
+nav {
+    height: 70px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    color: #e62429;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav ul li a:hover {
+    color: #e62429;
+}
+
+
+/* Home */
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+       url("images/avengers.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h2 {
+    font-size: 70px;
+    color: #e62429;
+    text-shadow: 0 0 20px black;
+}
+
+.hero-content p {
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #e62429;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #b71c1c;
+}
+
+
+/* Sections */
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    color: #e62429;
+    margin-bottom: 50px;
+}
+
+
+/* Hero Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Fix Heroes images */
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #000;
+}
+
+.card {
+    background: #151515;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 1px solid #333;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #e62429;
+}
+
+.emoji {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #e62429;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
+/* Movies */
+
+#movies {
+    background: #101010;
+}
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.movie img {
+    width: 180px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.movie {
+    background: #1c1c1c;
+    padding: 35px;
+    border-left: 5px solid #e62429;
+    transition: 0.3s;
+}
+
+.movie:hover {
+    transform: scale(1.03);
+}
+
+.movie h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.movie p {
+    color: #e62429;
+    font-size: 18px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #050505;
+    color: #aaa;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+        font-size: 45px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Cinematic Avengers Hero Animation */
+
+.hero-content {
+    animation: heroEnter 1.8s ease-out;
+}
+
+.hero-content h2 {
+    letter-spacing: 5px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.hero-content p {
+    letter-spacing: 2px;
+}
+
+.button {
+    box-shadow: 0 0 15px rgba(230, 36, 41, 0.7);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(230, 36, 41, 1);
+}
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px black;
+    }
+
+    to {
+        text-shadow: 0 0 25px #e62429;
+    }
+}
+
+@keyframes herotext {
+    from{
+        opacity: 0;
+        transfrom: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transfrom: translateY(0);
+    }
+}
+
+/* Premium Avengers Card Hover */
+
+.card {
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(230, 36, 41, 0.45);
+}
+
+.card img {
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card h3 {
+    transition: 0.3s ease;
+}
+
+.card:hover h3 {
+    text-shadow: 0 0 15px #e62429;
+}
+
+/* Avengers Card Content Animation */
+.avenger-card h2 {
+    transition: 0.4s ease;
+}
+
+.avenger-card:hover h2 {
+    color: #ff0000;
+    text-shadow: 0 0 10px red, 0 0 20px red;
+    transform: translateY(-5px);
+}
+
+.avenger-card img {
+    transition: transform 0.5s ease;
+}
+
+.avenger-card:hover img {
+    transform: scale(1.08);
+}
+
+.avenger-card {
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.avenger-card:hover {
+    box-shadow:
+        0 0 15px red,
+        0 0 30px red,
+        0 0 50px rgba(255, 0, 0, 0.6);
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.15), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 0, 0.12), transparent 30%),
+        #050505;
+    background-size: 200% 200%;
+    animation: backgroundMove 8s ease-in-out infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Movie Card Animation */
+.movie {
+    transition: all 0.5s ease;
+}
+
+.movie:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow:
+        0 0 15px red,
+        0 0 30px red,
+        0 0 50px rgba(255, 0, 0, 0.6);
+}
+
+.movie-section {
+    animation: moviesEntrance 1.5s ease-out;
+}
+
+@keyframes moviesEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.movie {
+    overflow: hidden;
+}
+
+.movie h3 {
+    transition: all 0.4s ease;
+}
+
+.movie img {
+    transition: transform 0.5s ease;
+}
+
+.movie:hover h3 {
+    color: red;
+    text-shadow:
+        0 0 10px red,
+        0 0 20px red,
+        0 0 30px red;
+    transform: scale(1.08);
+}
+
+.movie:hover img {
+    transform: scale(1.1);
+}
+
+.movie p {
+    transition: all 0.4s ease;
+}
+
+.movie:hover p {
+    color: #ffffff;
+    text-shadow: 0 0 8px red;
+    transform: translateY(-3px);
+}
+
+nav a {
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: red;
+    text-shadow:
+        0 0 8px red,
+        0 0 15px red;
+    transform: translateY(-3px);
+}
+
+body {
+    animation: pageLoad 1.2s ease-in-out;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   STORIES PAGE
+========================= */
+
+.story-hero {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        url("images/avengers.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 60px 8%;
+}
+
+.story-hero h2 {
+    font-size: 55px;
+    color: #e62429;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #e62429;
+}
+
+.story-hero p {
+    font-size: 22px;
+    color: #ddd;
+}
+
+.stories {
+    background: #080808;
+}
+
+.story-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.story-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(230, 36, 41, 0.45);
+    border-color: #e62429;
+}
+
+.story-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: #000;
+    transition: 0.5s ease;
+}
+
+.story-card:hover img {
+    transform: scale(1.06);
+}
+
+.story-content {
+    padding: 25px;
+}
+
+.story-content h3 {
+    color: #e62429;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.story-content p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+
+/* Stories mobile view */
+
+@media (max-width: 800px) {
+
+    .story-container {
+        grid-template-columns: 1fr;
+    }
+
+    .story-hero h2 {
+        font-size: 40px;
+    }
+}
+
+/* =========================
+   AVENGERS TIMELINE
+========================= */
+
+.timeline-hero {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        url("images/avengers.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 60px 8%;
+}
+
+.timeline-hero h2 {
+    font-size: 55px;
+    color: #e62429;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #e62429;
+}
+
+.timeline-hero p {
+    font-size: 22px;
+    color: #ddd;
+}
+
+.timeline-section {
+    background: #080808;
+    padding-bottom: 100px;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #e62429;
+    box-shadow: 0 0 15px #e62429;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px 40px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-year {
+    display: inline-block;
+    background: #e62429;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(230, 36, 41, 0.7);
+}
+
+.timeline-content {
+    background: #151515;
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.04);
+    border-color: #e62429;
+    box-shadow: 0 10px 30px rgba(230, 36, 41, 0.4);
+}
+
+.timeline-content h3 {
+    color: #e62429;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.timeline-content p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
+/* Timeline mobile view */
+
+@media (max-width: 800px) {
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 45px;
+        padding-right: 10px;
+    }
+
+    .timeline-hero h2 {
+        font-size: 40px;
+    }
+}
+
+/* =========================
+   AVENGERS ASSEMBLE PAGE
+========================= */
+
+.assemble-hero {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
+        url("images/avengers.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 80px 8%;
+}
+
+.assemble-content {
+    max-width: 850px;
+}
+
+.assemble-small {
+    color: #ccc;
+    letter-spacing: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.assemble-content h2 {
+    font-size: 80px;
+    line-height: 1;
+    color: white;
+    text-shadow: 0 0 20px #e62429;
+}
+
+.assemble-content h2 span {
+    display: block;
+    color: #e62429;
+    margin-top: 10px;
+}
+
+.assemble-text {
+    color: #ddd;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 30px auto;
+}
+
+.assemble-section {
+    background: #080808;
+}
+
+.assemble-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.assemble-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.assemble-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    border-color: #e62429;
+    box-shadow: 0 15px 35px rgba(230, 36, 41, 0.5);
+}
+
+/* Fix Assemble hero images */
+
+.assemble-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: #000;
+}
+
+.assemble-card:hover img {
+    transform: scale(1.08);
+}
+
+.assemble-card h3 {
+    color: #e62429;
+    padding: 20px 10px;
+    font-size: 18px;
+}
+
+.final-message {
+    text-align: center;
+    padding: 100px 20px;
+    background: #050505;
+}
+
+.final-message h2 {
+    font-size: 45px;
+    color: #e62429;
+    text-shadow: 0 0 20px #e62429;
+    margin-bottom: 15px;
+}
+
+.final-message p {
+    color: #ccc;
+    font-size: 20px;
+}
+
+
+/* Assemble mobile view */
+
+@media (max-width: 800px) {
+
+    .assemble-content h2 {
+        font-size: 55px;
+    }
+
+    .assemble-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .assemble-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .assemble-content h2 {
+        font-size: 42px;
+    }
+}
+
+/* =========================
+   GLOBAL PREMIUM ANIMATIONS
+========================= */
+
+.section-title {
+    animation: titleAppear 1.2s ease-out;
+    text-shadow: 0 0 12px #e62429;
+}
+
+@keyframes titleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        letter-spacing: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: normal;
+    }
+}
+
+
+/* Smooth card appearance */
+
+.card,
+.movie,
+.story-card,
+.timeline-content,
+.assemble-card {
+    animation: cardAppear 0.8s ease-out;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Image zoom */
+
+.card img,
+.movie img,
+.story-card img,
+.assemble-card img {
+    transition: transform 0.5s ease;
+}
+
+.card:hover img,
+.movie:hover img,
+.story-card:hover img,
+.assemble-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* Red glowing headings */
+
+.card h3,
+.movie h3,
+.story-content h3,
+.timeline-content h3,
+.assemble-card h3 {
+    transition: 0.3s ease;
+}
+
+.card:hover h3,
+.movie:hover h3,
+.story-card:hover h3,
+.timeline-content:hover h3,
+.assemble-card:hover h3 {
+    text-shadow: 0 0 15px #e62429;
+}
+
+/* =========================
+   PREMIUM NAVIGATION
+========================= */
+
+nav {
+    box-shadow: 0 2px 20px rgba(230, 36, 41, 0.15);
+}
+
+nav h1 {
+    text-shadow: 0 0 12px #e62429;
+    transition: 0.3s ease;
+}
+
+nav h1:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 25px #e62429;
+}
+
+nav ul li a {
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #e62429;
+    box-shadow: 0 0 8px #e62429;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e62429;
+    text-shadow: 0 0 10px #e62429;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   CINEMATIC IMAGE EFFECTS
+========================= */
+
+/* Hero Images */
+
+.card img,
+.story-card img,
+.assemble-card img {
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.card:hover img,
+.story-card:hover img,
+.assemble-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+}
+
+
+/* Movie Posters */
+
+.movie {
+    overflow: hidden;
+}
+
+.movie img {
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.movie:hover img {
+    transform: scale(1.10);
+    filter: brightness(1.18);
+}
+
+
+/* Red glow around cards */
+
+.card:hover,
+.movie:hover,
+.story-card:hover,
+.assemble-card:hover {
+    box-shadow:
+        0 0 10px rgba(230, 36, 41, 0.5),
+        0 0 25px rgba(230, 36, 41, 0.25);
+}
+
+/* =========================
+   STORIES CINEMATIC EFFECT
+========================= */
+
+.story-hero h2 {
+    animation: storyTitle 2s ease-out;
+}
+
+.story-hero p {
+    animation: storyText 2.5s ease-out;
+}
+
+.story-card {
+    animation: storyCardIn 1s ease-out;
+}
+
+.story-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.story-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.story-card:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+@keyframes storyTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        text-shadow: 0 0 0 #e62429;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 0 0 25px #e62429;
+    }
+}
+
+@keyframes storyText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes storyCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TIMELINE CINEMATIC EFFECT
+========================= */
+
+.timeline-hero h2 {
+    animation: timelineTitle 1.5s ease-out;
+}
+
+.timeline-hero p {
+    animation: timelineText 2s ease-out;
+}
+
+.timeline-item {
+    animation: timelineItemIn 0.9s ease-out both;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 0.55s;
+}
+
+.timeline-item:nth-child(5) {
+    animation-delay: 0.7s;
+}
+
+.timeline-item:nth-child(6) {
+    animation-delay: 0.85s;
+}
+
+.timeline-item:nth-child(7) {
+    animation-delay: 1s;
+}
+
+@keyframes timelineTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        text-shadow: 0 0 0 #e62429;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 0 0 25px #e62429;
+    }
+}
+
+@keyframes timelineText {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes timelineItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-year {
+    transition: 0.3s ease;
+}
+
+.timeline-item:hover .timeline-year {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 15px #e62429,
+        0 0 30px rgba(230, 36, 41, 0.5);
+}
+
+/* =========================
+   AVENGERS ASSEMBLE
+   FINAL CINEMATIC EFFECT
+========================= */
+
+.assemble-content {
+    animation: assembleEntrance 1.5s ease-out;
+}
+
+.assemble-small {
+    animation: assembleSmall 1s ease-out;
+}
+
+.assemble-content h2 {
+    animation: assembleTitle 2s ease-out;
+}
+
+.assemble-text {
+    animation: assembleText 2.3s ease-out;
+}
+
+.assemble-content .button {
+    animation: assembleButton 2.6s ease-out, buttonPulse 2.5s ease-in-out 3s infinite;
+}
+
+@keyframes assembleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes assembleSmall {
+    from {
+        opacity: 0;
+        letter-spacing: 0;
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: 5px;
+    }
+}
+
+@keyframes assembleTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+        text-shadow: 0 0 0 #e62429;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow:
+            0 0 15px #e62429,
+            0 0 35px rgba(230, 36, 41, 0.7);
+    }
+}
+
+@keyframes assembleText {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes assembleButton {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Final hero cards */
+
+.assemble-card {
+    animation: assembleCardIn 1s ease-out both;
+}
+
+.assemble-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.assemble-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.assemble-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.assemble-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes assembleCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Final message */
+
+.final-message h2 {
+    animation: finalGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes finalGlow {
+    from {
+        text-shadow: 0 0 10px #e62429;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #e62429,
+            0 0 40px rgba(230, 36, 41, 0.7);
+    }
+}
